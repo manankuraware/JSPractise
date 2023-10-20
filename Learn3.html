@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array1</title>
+</head>
+
+<body>
+    <script>
+        const cities = ["Manchester", "Liverpool"];
+        const newLength = cities.push("Bristol");
+        console.log(cities); // [ "Manchester", "Liverpool", "Bristol" ]
+        console.log(newLength); // 3
+
+        // To add an item to the start of the array
+        const citys = ["Manchester", "Liverpool"];
+        citys.unshift("Edinburgh");
+        console.log(citys); // [ "Edinburgh", "Manchester", "Liverpool" ]
+
+        const ct = ["Manchester", "Liverpool"];
+        ct.pop();
+        console.log(ct); // [ "Manchester" ]
+
+        // To remove the first item from an array, use shift()
+        const c = ["Manchester", "Liverpool"];
+        c.shift();
+        console.log(c); // [ "Liverpool" ]
+
+        // If you know the index of an item, you can remove it from the array using splice():
+        const citi = ["Manchester", "Liverpool", "Edinburgh", "Carlisle"];
+        const index = citi.indexOf("Liverpool");
+        if (index !== -1) {
+            citi.splice(index, 1);
+        }
+        console.log(citi); // [ "Manchester", "Edinburgh", "Carlisle" ]
+
+
+        // In this call to splice(), the first argument says where to start removing items, and the 
+        // second argument says how many items should be removed.So you can remove more than one item:
+        const citie = ["Manchester", "Liverpool", "Edinburgh", "Carlisle"];
+        const indx = citie.indexOf("Liverpool");
+        if (indx !== -1) {
+            citie.splice(indx,2);
+        }
+        console.log(citie); // [ "Manchester", "Carlisle" ]
+
+    </script>
+</body>
+
+</html>
