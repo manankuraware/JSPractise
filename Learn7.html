@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event obj - Preventing default behavior</title>
+</head>
+
+<body>
+    <form>
+        <div>
+            <label for="fname">First name: </label>
+            <input id="fname" type="text" />
+        </div>
+        <div>
+            <label for="lname">Last name: </label>
+            <input id="lname" type="text" />
+        </div>
+        <div>
+            <input id="submit" type="submit" />
+        </div>
+    </form>
+    <p></p>
+    <script>   
+    // Now some JavaScript — here we implement a very simple check inside a handler for the submit event (the submit event
+    // is fired on a form when it is submitted) that tests whether the text fields are empty. If they are, we call the
+    // preventDefault() function on the event object — which stops the form submission — and then display an error message
+    // in the paragraph below our form to tell the user what's wrong:
+        const form = document.querySelector("form");
+        const fname = document.getElementById("fname");
+        const lname = document.getElementById("lname");
+        const para = document.querySelector("p");
+        form.addEventListener("submit", (e) => {
+            if (fname.value === "" || lname.value === "") {
+                e.preventDefault();
+                para.textContent = "You need to fill in both names!";
+            }
+        });
+
+    </script>
+</body>
+
+</html>

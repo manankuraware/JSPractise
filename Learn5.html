@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event handlers</title>
+</head>
+
+<body>
+    <button>Change color</button>
+    <button onclick="alert('Hello, this is my old-fashioned event handler!');">
+        Press me
+    </button>
+    <!-- Finally, many common server configurations will disallow inline JavaScript, as a security measure.
+
+    You should never use the HTML event handler attributes — those are outdated, and using them is bad practice. -->
+
+    <script>
+        // const btn = document.querySelector("button");
+        // function random(number) {
+        //     return Math.floor(Math.random() * (number + 1));
+        // }
+        // btn.addEventListener("click", () => {
+        //     const randCol = `rgb(${random(255)},${random(255)},${random(255)})`;
+        //     document.body.style.backgroundColor = randCol;
+        // })
+
+        // Another ways to use addEventListner:
+        // // const btn = document.querySelector("button");
+        // function random(number) {
+        //     return Math.floor(Math.random() * (number + 1));
+        // }
+        // function changeBackground() {
+        //     const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+        //     document.body.style.backgroundColor = rndCol;
+        // }
+        // btn.addEventListener("click", changeBackground);
+
+        // const btn = document.querySelector("button");
+        // function random(number) {
+        //     return Math.floor(Math.random() * (number + 1));
+        // }
+        // btn.onclick = () => {
+        //     const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+        //     document.body.style.backgroundColor = rndCol;
+        // };
+
+        // If you've added an event handler using addEventListener(), you can remove it again using the removeEventListener() method. For example, this would remove the changeBackground() event handler:
+        // btn.removeEventListener("click", changeBackground);
+    </script>
+</body>
+
+</html>
