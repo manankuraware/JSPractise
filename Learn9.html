@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript object</title>
+  </head>
+  <body>
+    <!-- An object is a collection of related data and/or functionality. These
+    usually consist of several variables and functions (which are called
+    properties and methods when they are inside objects). Let's work through an
+    example to understand what they look like. -->
+    <script>
+      const person = {
+        name: ["Bob", "Smith"],
+        age: 32,
+        bio: function () {
+          console.log(
+            `${this.name[0]} ${this.name[1]} is ${this.age} years old.`
+          );
+        },
+        introduceSelf: function () {
+          console.log(`Hi! I'm ${this.name[1]}.`);
+        },
+      };
+      person.introduceSelf();
+      person.bio();
+    </script>
+  </body>
+</html>
