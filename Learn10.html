@@ -6,6 +6,52 @@
     <title>More on js Objects</title>
   </head>
   <body>
-    
+    <!--     
+    Setting object members So far we've only looked at retrieving (or getting)
+    object members — you can also set (update) the value of object members by
+    declaring the member you want to set (using dot or bracket notation), like
+    this: 
+    person.age = 45; 
+    person["name"]["last"] = "Cratchit"; 
+-->
+    <!-- Setting members doesn't just stop at updating the values of existing
+    properties and methods; you can also create completely new members. Try
+    these in the JS console: 
+    person["eyes"] = "hazel"; 
+    person.farewell = function () { console.log("Bye
+    everybody!"); };
+-->
+
+    <script>
+      // const person = {
+      //   name: {
+      //     first: "Bob",
+      //     last: "Smith",
+      //   },
+      //   age: 21,
+      // };
+      // person.age = 45;
+      // person["name"]["last"] = "Cratchit";
+
+      // person["eyes"] = "hazel";
+      // person.farewell = function () {
+      //   console.log("Bye everybody!");
+      // };
+      //   person["eyes"];
+      //   person.farewell();
+
+      //   One useful aspect of bracket notation is that it can be used to set not only member values dynamically, but member names too. Let's say we wanted users to be able to store custom value types in their people data, by typing the member name and value into two text inputs. We could get those values like this:
+      //   const myDataName = nameInput.value;
+      //   const myDataValue = nameValue.value;
+      //   person[myDataName] = myDataValue;
+      // example:
+      const person = {
+        name: ["Bob", "Smith"],
+        age: 32,
+      };
+      const myDataName = "height";
+      const myDataValue = "1.75m";
+      person[myDataName] = myDataValue;
+    </script>
   </body>
 </html>
