@@ -11,20 +11,46 @@
     properties and methods when they are inside objects). Let's work through an
     example to understand what they look like. -->
     <script>
+      // const person = {
+      //   name: ["Bob", "Smith"],
+      //   age: 32,
+      //   bio: function () {
+      //     console.log(
+      //       `${this.name[0]} ${this.name[1]} is ${this.age} years old.`
+      //     );
+      //   },
+      //   introduceSelf: function () {
+      //     console.log(`Hi! I'm ${this.name[1]}.`);
+      //   },
+      // };
+      // person.name;
+      // person.name[0];
+      // person.age;
+      // person.bio();
+      // "Bob Smith is 32 years old."
+      // person.introduceSelf();
+      // "Hi! I'm Bob."
+
+      // Dot notation:-
+      // Above, you accessed the object's properties and methods using dot notation.
+      // The object name (person) acts as the namespace — it must be entered first to access
+      // anything inside the object. Next you write a dot, then the item you want to access —
+      // this can be the name of a simple property, an item of an array property, or a call to one of the object's methods
+
+      // Objects as object properties:-
       const person = {
-        name: ["Bob", "Smith"],
-        age: 32,
-        bio: function () {
-          console.log(
-            `${this.name[0]} ${this.name[1]} is ${this.age} years old.`
-          );
+        name: {
+          first: "Bob",
+          last: "Smith",
         },
-        introduceSelf: function () {
-          console.log(`Hi! I'm ${this.name[1]}.`);
-        },
+        age: 27,
       };
-      person.introduceSelf();
-      person.bio();
+      // console.log(person.age);
+      // console.log(person.name.first);
+
+      // You can instead use square brackets:
+      console.log(person["age"]);
+      console.log(person["name"]["first"]);
     </script>
   </body>
 </html>
