@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>More on js Object -This &...</title>
+</head>
+
+<body>
+    <!-- 
+    The this keyword refers to the current object the code is being written
+    inside . 
+    Well, when you only have to create a single object literal, it's
+    not so useful. But if you create more than one, this enables you to use the
+    same method definition for every object you create.
+    const person1 = {
+        name: "Chris",
+        introduceSelf() {
+          console.log(`Hi! I'm ${this.name}.`);
+        },
+      };
+      
+      const person2 = {
+        name: "Deepti",
+        introduceSelf() {
+          console.log(`Hi! I'm ${this.name}.`);
+        },
+      };
+    In this case, person1.introduceSelf() outputs "Hi! I'm Chris."; person2.introduceSelf() on the other hand outputs "Hi!
+    I'm Deepti.", even though the method's code is exactly the same in each case. This isn't hugely useful when you are
+    writing out object literals by hand, but it will be essential when we start using constructors to create more than one
+    object from a single object definition
+     -->
+
+    <!-- 
+    Introducing constructors:-
+    Using object literals is fine when you only need to create one object, but if you have to create more than one, as
+    in the previous section, they're seriously inadequate. We have to write out the same code for every object we
+    create, and if we want to change some properties of the object - like adding a height property - then we have to
+    remember to update every object. 
+    We would like a way to define the "shape" of an object — the set of methods and the properties it can have — and
+    then create as many objects as we like, just updating the values for the properties that are different
+-->
+    <script>
+        // function createPerson(name) {
+        //     const obj = {};
+        //     obj.name = name;
+        //     obj.introduceSelf = function () {
+        //         console.log(`Hi! I'm ${this.name}.`);
+        //     };
+        //     return obj;
+        // }
+        // This function creates and returns a new object each time we call it.The object will have two members:
+        // a property name
+        // a method introduceSelf()
+        // Now we can create as many objects as we like, reusing the definition:
+        // const salva = createPerson("Salva");
+        // console.log(salva.name);
+        // console.log(salva.introduceSelf());
+        // const frankie = createPerson("Frankie");
+        // console.log(frankie.name);
+        // console.log(frankie.introduceSelf());
+
+        // This works fine but is a bit long-winded: we have to create an empty object, initialize it, and return 
+        // it. A better way is to use a constructor. A constructor is just a function called using the new keyword. 
+        // When you call a constructor, it will:
+        //         create a new object
+        //         bind this to the new object, so you can refer to this in your constructor code
+        //         run the code in the constructor
+        //         return the new object.
+        // Constructors, by convention, start with a capital letter and are named for the type of object they create
+        function Person(name) {
+            this.name = name;
+            this.introduceSelf = function () {
+                console.log(`Hi! I'm ${this.name}.`);
+            };
+        }
+
+        const salva = new Person("Salva");
+        salva.name;
+        salva.introduceSelf();
+        const frankie = new Person("Frankie");
+        frankie.name;
+        frankie.introduceSelf();
+    </script>
+</body>
+
+</html>
