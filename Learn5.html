@@ -37,17 +37,17 @@
         // }
         // btn.addEventListener("click", changeBackground);
 
-        // const btn = document.querySelector("button");
-        // function random(number) {
-        //     return Math.floor(Math.random() * (number + 1));
-        // }
-        // btn.onclick = () => {
-        //     const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
-        //     document.body.style.backgroundColor = rndCol;
-        // };
+        const btn = document.querySelector("button");
+        function random(number) {
+            return Math.floor(Math.random() * (number + 1));
+        }
+        btn.onclick = () => {
+            const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+            document.body.style.backgroundColor = rndCol;
+        };
 
         // If you've added an event handler using addEventListener(), you can remove it again using the removeEventListener() method. For example, this would remove the changeBackground() event handler:
-        // btn.removeEventListener("click", changeBackground);
+        btn.removeEventListener("click", changeBackground);
     </script>
 </body>
 

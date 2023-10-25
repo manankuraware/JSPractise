@@ -17,26 +17,26 @@
     <div id="output"></div>
     
     <script>
-        // const btn = document.querySelector("button");
-        // function random(number) {
-        //     return Math.floor(Math.random() * (number + 1));
-        // }
-        // function bgChange(e) {
-        //     const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
-        //     e.target.style.backgroundColor = rndCol;
-        //     console.log(e);
-        // }
-        // btn.addEventListener("click", bgChange);
+        const btn = document.querySelector("button");
+        function random(number) {
+            return Math.floor(Math.random() * (number + 1));
+        }
+        function bgChange(e) {
+            const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+            e.target.style.backgroundColor = rndCol;
+            console.log(e);
+        }
+        btn.addEventListener("click", bgChange);
         // Here you can see we are including an event object, e, in the function, and in the function setting a background
         // color style on e.target — which is the button itself. The target property of the event object is always a reference
         // to the element the event occurred upon. So, in this example, we are setting a random background color on the button,
         // not the page.
 
-        // const txtbox = document.querySelector('#textBox');
-        // const output = document.querySelector("#output");
-        // txtbox.addEventListener("keydown", (event) => {
-        //     output.textContent = `You Pressed "${event.key}".`;
-        // })
+        const txtbox = document.querySelector('#textBox');
+        const output = document.querySelector("#output");
+        txtbox.addEventListener("keydown", (event) => {
+            output.textContent = `You Pressed "${event.key}".`;
+        })
     // Some event objects add extra properties that are relevant to that particular type of event. For example, the keydown
     // event fires when the user presses a key. Its event object is a KeyboardEvent, which is a specialized Event object
     // with a key property that tells you which key was pressed:

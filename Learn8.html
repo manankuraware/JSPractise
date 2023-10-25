@@ -45,17 +45,17 @@
 
     <script>
       //  stopPropagation() which, when called inside an event handler, prevents the event from bubbling up to any other elements.
-      //   const btn = document.querySelector("button");
-      //   const box = document.querySelector("div");
-      //   const video = document.querySelector("video");
+        const btn = document.querySelector("button");
+        const box = document.querySelector("div");
+        const video = document.querySelector("video");
 
-      //   btn.addEventListener("click", () => box.classList.remove("hidden"));
+        btn.addEventListener("click", () => box.classList.remove("hidden"));
 
-      //   video.addEventListener("click", (event) => {
-      //     event.stopPropagation();
-      //     video.play();
-      //   });
-      //   box.addEventListener("click", () => box.classList.add("hidden"));
+        video.addEventListener("click", (event) => {
+          event.stopPropagation();
+          video.play();
+        });
+        box.addEventListener("click", () => box.classList.add("hidden"));
 
       //   An alternative form of event propagation is event capture. This is like event bubbling but the order is reversed:
       //   so instead of the event firing first on the innermost element targeted, and then on successively less nested elements,

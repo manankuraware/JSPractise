@@ -21,13 +21,13 @@ until either the property is found, or the end of the chain is reached, in which
 <body>
     <script>
         // The prototype of an object is not always Object.prototype. Try this
-        // const myDate = new Date();
-        // let object = myDate;
+        const myDate = new Date();
+        let object = myDate;
 
-        // do {
-        //     object = Object.getPrototypeOf(object);
-        //     console.log(object);
-        // } while (object);
+        do {
+            object = Object.getPrototypeOf(object);
+            console.log(object);
+        } while (object);
 
         // This code creates a Date object, then walks up the prototype chain, logging the prototypes.
         // It shows us that the prototype of myDate is a Date.prototype object, and the prototype of that 

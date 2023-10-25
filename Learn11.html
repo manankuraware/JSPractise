@@ -43,14 +43,14 @@
     then create as many objects as we like, just updating the values for the properties that are different
 -->
     <script>
-        // function createPerson(name) {
-        //     const obj = {};
-        //     obj.name = name;
-        //     obj.introduceSelf = function () {
-        //         console.log(`Hi! I'm ${this.name}.`);
-        //     };
-        //     return obj;
-        // }
+        function createPerson(name) {
+            const obj = {};
+            obj.name = name;
+            obj.introduceSelf = function () {
+                console.log(`Hi! I'm ${this.name}.`);
+            };
+            return obj;
+        }
         // This function creates and returns a new object each time we call it.The object will have two members:
         // a property name
         // a method introduceSelf()
