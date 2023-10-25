@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+
+<body>
+    <!-- 
+    JavaScript Object Notation (JSON) is a standard text-based format for representing structured data based on
+    JavaScript object syntax. It is commonly used for transmitting data in web applications (e.g., sending some data
+    from the server to the client, so it can be displayed on a web page, or vice versa).
+    
+    Even though it closely resembles JavaScript object literal syntax, it can be used independently from JavaScript, and
+    many programming environments feature the ability to read (parse) and generate JSON.
+
+    JSON exists as a string — useful when you want to transmit data across a network. It needs to be converted to a
+    native JavaScript object when you want to access the data.
+
+    JSON structure:
+    {
+  "squadName": "Super hero squad",
+  "homeTown": "Metro City",
+  "formed": 2016,
+  "secretBase": "Super tower",
+  "active": true,
+  "members": [
+    {
+      "name": "Molecule Man",
+      "age": 29,
+      "secretIdentity": "Dan Jukes",
+      "powers": ["Radiation resistance", "Turning tiny", "Radiation blast"]
+    },
+    {
+      "name": "Madame Uppercut",
+      "age": 39,
+      "secretIdentity": "Jane Wilson",
+      "powers": [
+        "Million tonne punch",
+        "Damage resistance",
+        "Superhuman reflexes"
+      ]
+    },
+    {
+      "name": "Eternal Flame",
+      "age": 1000000,
+      "secretIdentity": "Unknown",
+      "powers": [
+        "Immortality",
+        "Heat Immunity",
+        "Inferno",
+        "Teleportation",
+        "Interdimensional travel"
+      ]
+    }
+  ]
+}
+If we loaded this string into a JavaScript program and parsed it into a variable called superHeroes 
+for example, we could then access the data inside it using the same dot/bracket notation
+superHeroes.homeTown;
+superHeroes["active"];
+superHeroes["members"][1]["powers"][2];
+First, we have the variable name — superHeroes.
+Inside that, we want to access the members property, so we use ["members"].
+members contains an array populated by objects. We want to access the second object inside the array, so we use [1].
+Inside this object, we want to access the powers property, so we use ["powers"].
+Inside the powers property is an array containing the selected hero's superpowers. We want the third one, so we use [2].
+
+Arrays as JSON:
+We can also convert arrays to/from JSON
+[
+  {
+    "name": "Molecule Man",
+    "age": 29,
+    "secretIdentity": "Dan Jukes",
+    "powers": ["Radiation resistance", "Turning tiny", "Radiation blast"]
+  },
+  {
+    "name": "Madame Uppercut",
+    "age": 39,
+    "secretIdentity": "Jane Wilson",
+    "powers": [
+      "Million tonne punch",
+      "Damage resistance",
+      "Superhuman reflexes"
+    ]
+  }
+]
+The above is perfectly valid JSON. You'd just have to access array items (in its parsed version) 
+by starting with an array index, for example [0]["powers"][0].
+-->
+<script>
+    
+</script>
+</body>
+
+</html>
