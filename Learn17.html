@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indexed collections</title>
+</head>
+
+<body>
+    <!-- Creating an array
+    The following statements create equivalent arrays: 
+    const arr1 = new Array(element0, element1, /* …, */ elementN);
+    const arr2 = Array(element0, element1, /* …, */ elementN);
+    const arr3 = [element0, element1, /* …, */ elementN];
+
+    To create an array with non-zero length, but without any items, either of the following can be used:
+    // This...
+    const arr1 = new Array(arrayLength);
+    // ...results in the same array as this
+    const arr2 = Array(arrayLength);
+    // This has exactly the same effect
+    const arr3 = [];
+    arr3.length = arrayLength;
+
+    In addition to a newly defined variable as shown above, arrays can also be assigned as a property of a new or an existing object:
+    const obj = {};
+    // …
+    obj.prop = [element0, element1, /* …, */ elementN];
+
+    // OR
+    const obj = { prop: [element0, element1, /* …, */ elementN] };
+    If you wish to initialize an array with a single element, and the element happens to be a Number, you must use the bracket syntax. 
+    When a single Number value is passed to the Array() constructor or function, it is interpreted as an arrayLength, not as a single element.
+
+    This creates an array with only one element: the number 42.
+    const arr = [42]
+    This creates an array with no elements and arr.length set to 42.
+    const arr = Array(42);
+
+    Calling Array(N) results in a RangeError, if N is a non-whole number whose fractional portion is non-zero. The following example illustrates this behavior.
+    const arr = Array(9.3); // RangeError: Invalid array length
+-->
+    <script>
+        const divs = document.getElementsByTagName("div");
+        for (let i = 0, div; (div = divs[i]); i++) {
+            /* Process div in some way */
+        }
+        const colors = ["red", "green", "blue"];
+        colors.forEach((color) => console.log(color));
+        // red
+        // green
+        // blue
+
+        let myArray = ["1", "2", "3"];
+        myArray = myArray.concat("a", "b", "c");
+        // myArray is now ["1", "2", "3", "a", "b", "c"]
+
+        const myArray1 = ["Wind", "Rain", "Fire"];
+        const list = myArray1.join(" - "); // list is "Wind - Rain - Fire"
+
+        const myArray2 = ["a", "b", "c", "d", "e"];
+        console.log(myArray2.at(-2)); // "d", the second-last element of myArray
+
+        const myArray3 = ["1", "2", "3"];
+        myArray3.reverse();
+        // transposes the array so that myArray = ["3", "2", "1"]
+
+        let myArray4 = [1, 2, [3, 4]];
+        myArray4 = myArray4.flat();
+        // myArray is now [1, 2, 3, 4], since the [3, 4] subarray is flattened
+
+        const myArray5 = ["Wind", "Rain", "Fire"];
+        myArray5.sort();
+        // sorts the array so that myArray = ["Fire", "Rain", "Wind"]
+
+        const a = ["a", "b", "a", "b", "a"];
+        console.log(a.indexOf("b")); // 1
+        // Now try again, starting from after the last match
+        console.log(a.indexOf("b", 2)); // 3
+        console.log(a.indexOf("z")); // -1, because 'z' was not found
+
+        const a1 = ["a", "b", "c", "d", "a", "b"];
+        console.log(a1.lastIndexOf("b")); // 5
+        // Now try again, starting from before the last match
+        console.log(a1.lastIndexOf("b", 4)); // 1
+        console.log(a1.lastIndexOf("z")); // -1
+
+        // The flatMap() method runs map() followed by a flat() of depth 1.
+        const a2 = ["a", "b", "c", "d", "a", "b"];
+        console.log(a2.lastIndexOf("b")); // 5
+        // Now try again, starting from before the last match
+        console.log(a22.lastIndexOf("b", 4)); // 1
+        console.log(a2.lastIndexOf("z")); // -1
+
+        // the filter() method returns a new array containing the items for which callback returned true.
+        const a11 = ["a", 10, "b", 20, "c", 30];
+        const a22 = a11.filter((item) => typeof item === "number");
+        console.log(a22); // [10, 20, 30]
+
+        // The find() method returns the first item for which callback returned true.
+        const a12 = ["a", 10, "b", 20, "c", 30];
+        const i = a12.find((item) => typeof item === "number");
+        console.log(i); // 10
+
+        // The findLast() method returns the last item for which callback returned true.
+        // The findIndex() method returns the index of the first item for which callback returned true.
+        // The findLastIndex() method returns the index of the last item for which callback returned true.
+        // The every() method returns true if callback returns true for every item in the array.
+        // The some() method returns true if callback returns true for at least one item in the array.
+
+        // The reduce() method applies callback(accumulator, currentValue, currentIndex, array) for each value in the array for the purpose of reducing the list of items down to a single value. The reduce function returns the final value returned by callback function.
+
+        // If initialValue is specified, then callback is called with initialValue as the first parameter value and the value of the first item in the array as the second parameter value.
+
+        // If initialValue is not specified, then callback's first two parameter values will be the first and second elements of the array. On every subsequent call, the first parameter's value will be whatever callback returned on the previous call, and the second parameter's value will be the next value in the array.
+
+        // If callback needs access to the index of the item being processed, or access to the entire array, they are available as optional parameters.
+        const az = [10, 20, 30];
+        const total = az.reduce(
+            (accumulator, currentValue) => accumulator + currentValue,
+            0,
+        );
+        console.log(total); // 60
+
+        // The reduceRight() method works like reduce(), but starts with the last element.
+    </script>
+</body>
+
+</html>
