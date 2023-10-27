@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyed collections</title>
+</head>
+
+<body>
+    <!-- Object and Map compared
+    Traditionally, objects have been used to map strings to values. Objects allow you to set keys to values, retrieve
+    those values, delete keys, and detect whether something is stored at a key. Map objects, however, have a few more
+    advantages that make them better maps.
+    -->
+    <!--     
+    These three tips can help you to decide whether to use a Map or an Object:
+
+    Use maps over objects when keys are unknown until run time, and when all keys are the same type and all values are the same type.  -->
+
+    <!-- Use maps if there is a need to store primitive values as keys because object treats each key as a string whether
+    it's a number value, boolean value or any other primitive value. -->
+
+    <!-- Use objects when there is logic that operates on individual elements. -->
+    <script>
+        // A Map object is a simple key/value map and can iterate its elements in insertion order.
+        const sayings = new Map();
+        sayings.set("dog", "woof");
+        sayings.set("cat", "meow");
+        sayings.set("elephant", "toot");
+        sayings.size; // 3
+        sayings.get("dog"); // woof
+        sayings.get("fox"); // undefined
+        sayings.has("bird"); // false
+        sayings.delete("dog");
+        sayings.has("dog"); // false
+        for (const [key, value] of sayings) {
+            console.log(`${key} goes ${value}`);
+        }
+        // "cat goes meow"
+        // "elephant goes toot"
+        sayings.clear();
+        sayings.size; // 0
+
+        //         Set object
+        // Set objects are collections of unique values. You can iterate its elements in insertion order. 
+        // A value in a Set may only occur once; it is unique in the Set's collection.
+        const mySet = new Set();
+        mySet.add(1);
+        mySet.add("some text");
+        mySet.add("foo");
+
+        mySet.has(1); // true
+        mySet.delete("foo");
+        mySet.size; // 2
+
+        for (const item of mySet) {
+            console.log(item);
+        }
+        // 1
+        // "some text"
+
+        // You can create an Array from a Set using Array.from or the spread syntax. Also, the Set constructor accepts an Array to convert in the other direction.
+
+
+        // Array and Set compared
+// Traditionally, a set of elements has been stored in arrays in JavaScript in a lot of situations. The Set object, however, has some advantages:
+
+// Deleting Array elements by value (arr.splice(arr.indexOf(val), 1)) is very slow.
+// Set objects let you delete elements by their value. With an array, you would have to splice based on an element's index.
+// The value NaN cannot be found with indexOf in an array.
+// Set objects store unique values. You don't have to manually keep track of duplicates.
+
+
+    </script>
+</body>
+
+</html>

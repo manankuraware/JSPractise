@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with objects</title>
+</head>
+
+<body>
+    <!-- Objects can also be created using the Object.create() method. This method can be very useful, because it allows you
+    to choose the prototype object for the object you want to create, without having to define a constructor function. 
+    // Animal properties and method encapsulation
+const Animal = {
+  type: "Invertebrates", // Default value of properties
+  displayType() {
+    // Method which will display type of Animal
+    console.log(this.type);
+  },
+};
+
+// Create new animal type called animal1
+const animal1 = Object.create(Animal);
+animal1.displayType(); // Logs: Invertebrates
+
+// Create new animal type called fish
+const fish = Object.create(Animal);
+fish.type = "Fishes";
+fish.displayType(); // Logs: Fishes
+-->
+
+    <!-- 
+Enumerating properties
+There are three native ways to list/traverse object properties:
+
+for...in loops. This method traverses all of the enumerable string properties of an object as well as its prototype chain.
+Object.keys(). This method returns an array with only the enumerable own string property names ("keys") in the object myObj, but not those in the prototype chain.
+Object.getOwnPropertyNames(). This method returns an array containing all the own string property names in the object myObj, regardless of if they are enumerable or not. 
+-->
+
+    <!-- All objects in JavaScript inherit from at least one other object. The object being inherited from is known as the prototype, and the inherited properties can be found 
+    in the prototype object of the constructor. -->
+
+
+<!-- Defining getters and setters
+const myObj = {
+  a: 7,
+  get b() {
+    return this.a + 1;
+  },
+  set c(x) {
+    this.a = x / 2;
+  },
+};
+
+console.log(myObj.a); // 7
+console.log(myObj.b); // 8, returned from the get b() method
+myObj.c = 50; // Calls the set c(x) method
+console.log(myObj.a); // 25
+
+Getters and setters can also be added to an object at any time after creation using the Object.defineProperties() 
+method. This method's first parameter is the object on which you want to define the getter or setter. The second 
+parameter is an object whose property names are the getter or setter names, and whose property values are 
+objects for defining the getter or setter functions.
+
+const myObj = { a: 0 };
+
+Object.defineProperties(myObj, {
+  b: {
+    get() {
+      return this.a + 1;
+    },
+  },
+  c: {
+    set(x) {
+      this.a = x / 2;
+    },
+  },
+});
+
+myObj.c = 10; // Runs the setter, which assigns 10 / 2 (5) to the 'a' property
+console.log(myObj.b); // Runs the getter, which yields a + 1 or 6
+
+-->
+</body>
+
+</html>
