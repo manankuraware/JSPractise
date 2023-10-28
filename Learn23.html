@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta programming</title>
+</head>
+
+<body>
+    <!-- The Proxy and Reflect objects allow you to intercept and define custom behavior for fundamental language operations
+    (e.g. property lookup, assignment, enumeration, function invocation, etc.). With the help of these two objects you
+    are able to program at the meta level of JavaScript. -->
+
+    <script>
+        //         Proxies
+        // Proxy objects allow you to intercept certain operations and to implement custom behaviors.
+        const handler = {
+            get(target, name) {
+                return name in target ? target[name] : 42;
+            },
+        };
+
+        const p = new Proxy({}, handler);
+        p.a = 1;
+        console.log(p.a, p.b); // 1, 42
+        // The Proxy object defines a target(an empty object here) and a handler object, in which a get trap is implemented.Here, 
+        // an object that is proxied will not return undefined when getting undefined properties, but will instead return the number 42.
+
+        // Handlers and traps
+
+        // Revocable Proxy:
+        // The Proxy.revocable() method is used to create a revocable Proxy object. This means that the proxy can be revoked via the function revoke and switches the proxy off.
+
+        //         Reflection
+        // Reflect is a built -in object that provides methods for interceptable JavaScript operations.The methods are the same as those of the proxy handler's.
+        // Reflect is not a function object.
+        // Reflect helps with forwarding default operations from the handler to the target.
+
+        // A better apply() function
+        // Before Reflect, you typically use the Function.prototype.apply() method to call a 
+        // function with a given this value and arguments provided as an array (or an array-like object).
+    </script>
+</body>
+
+</html>
